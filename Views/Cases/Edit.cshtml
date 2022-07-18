@@ -1,0 +1,78 @@
+﻿@model NWXray.Models.Case
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClientFirstname" class="control-label"></label>
+                <input asp-for="ClientFirstname" class="form-control" />
+                <span asp-validation-for="ClientFirstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientLastname" class="control-label"></label>
+                <input asp-for="ClientLastname" class="form-control" />
+                <span asp-validation-for="ClientLastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientEmail" class="control-label"></label>
+                <input asp-for="ClientEmail" class="form-control" />
+                <span asp-validation-for="ClientEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientPhone" class="control-label"></label>
+                <input asp-for="ClientPhone" class="form-control" />
+                <span asp-validation-for="ClientPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAddress" class="control-label"></label>
+                <input asp-for="ClientAddress" class="form-control" />
+                <span asp-validation-for="ClientAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientInquiry" class="control-label"></label>
+                <input asp-for="ClientInquiry" class="form-control" rows="3" />
+                <span asp-validation-for="ClientInquiry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientRequestDatetime" class="control-label"></label>
+                <input asp-for="ClientRequestDatetime" class="form-control" />
+                <span asp-validation-for="ClientRequestDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DealerRespond" class="control-label"></label>
+                <input asp-for="DealerRespond" class="form-control" rows="3"/>
+                <span asp-validation-for="DealerRespond" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DealerRespondDatetime" class="control-label"></label>
+                <input asp-for="DealerRespondDatetime" class="form-control" />
+                <span asp-validation-for="DealerRespondDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DealerUserName" class="control-label"></label>
+                <input asp-for="DealerUserName" class="form-control" />
+                <span asp-validation-for="DealerUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

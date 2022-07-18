@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NWXray.Models.Case>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@*
+<h1>Case List</h1>*@
+
+<p>
+    <input class="btn-primary btn-lg" type="button" value="Create New" onclick="location.href='@Url.Action("Create", "Cases")'" />
+    @*<a asp-action="Create">Create New</a>*@
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First name
+            </th>
+            <th>
+                Last name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Request Date
+            </th>
+            <th>
+                Respond Date
+            </th>
+            <th>
+                Dealer UserName
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientFirstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientLastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientRequestDatetime.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerRespondDatetime.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerUserName)
+            </td>
+            <td>
+                 <input class="btn-primary" type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Cases", new { id = item.Id })'" />
+                 <input class="btn-secondary" type="button" value="Details" onclick="location.href='@Url.Action("Details", "Cases", new { id = item.Id })'" />
+                 <input class="btn-danger" type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Cases", new { id = item.Id })'" />
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

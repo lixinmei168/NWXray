@@ -1,0 +1,43 @@
+﻿@model NWXray.Models.Case
+
+<div>
+    <h4>Your request has been sent!</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            First name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientFirstname)
+        </dd>
+        <dt class = "col-sm-2">
+            Last name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientLastname)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            Phone
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            Address
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            Comment
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClientInquiry)
+        </dd>
+</div>
